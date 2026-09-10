@@ -2,59 +2,114 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./src/css/reset.css">
+  <link rel="stylesheet" href="./src/css/token.css">
+  <link rel="stylesheet" href="./src/css/style.css">
+  <link rel="stylesheet" href="./src/css/responsive.css">
+
+  <script defer src="./src/js/script.js"></script>
 
   <title>Frontend Mentor | Grid landing page</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
-  <!-- Nav -->
-  Bridge Collective
+  <header class="site-header">
+    <a class="logo" href="#">Bridge Collective</a>
 
-  <!-- Hero -->
-  A classroom for every child.
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+      <img class="icon-menu" src="./assets/images/icon-menu.svg" alt="">
+      <img class="icon-close" src="./assets/images/icon-close.svg" alt="">
+      <span class="sr-only">Menu</span>
+    </button>
+  </header>
 
-  We fund the schools, train the teachers, and measure what works — so every child we reach today becomes a graduate tomorrow.
+  <main class="layout">
+    <section class="hero">
+      <h1>A classroom for every child.</h1>
+      <p>
+        We fund the schools, train the teachers, and measure what works &mdash; so every
+        child we reach today becomes a graduate tomorrow.
+      </p>
+    </section>
 
-  <!-- Stats -->
-  2.4M
-  Students reached
-  Across 31 countries since 2011.
+    <ul class="stats">
+      <li>
+        <a class="stat" href="#">
+          <span class="stat__top">
+            <img src="./assets/images/icon-sparkle.svg" alt="">
+            <span class="stat__number">2.4M</span>
+          </span>
+          <span class="stat__body">
+            <span class="stat__label">Students reached</span>
+            <span class="stat__description">Across 31 countries since 2011.</span>
+          </span>
+        </a>
+      </li>
 
-  1,284
-  Schools partnered
-  In 14 countries, from Kenya to Guatemala.
+      <li>
+        <a class="stat" href="#">
+          <span class="stat__top">
+            <img src="./assets/images/icon-plus.svg" alt="">
+            <span class="stat__number">1,284</span>
+          </span>
+          <span class="stat__body">
+            <span class="stat__label">Schools partnered</span>
+            <span class="stat__description">In 14 countries, from Kenya to Guatemala.</span>
+          </span>
+        </a>
+      </li>
 
-  38K
-  Teachers trained
-  Equipped with modern tools and methodology.
+      <li>
+        <a class="stat" href="#">
+          <span class="stat__top">
+            <img src="./assets/images/icon-arrow-right.svg" alt="">
+            <span class="stat__number">38K</span>
+          </span>
+          <span class="stat__body">
+            <span class="stat__label">Teachers trained</span>
+            <span class="stat__description">Equipped with modern tools and methodology.</span>
+          </span>
+        </a>
+      </li>
 
-  3.1×
-  Graduation lift
-  Partner schools outperform national averages 3x.
+      <li>
+        <a class="stat" href="#">
+          <span class="stat__top">
+            <img src="./assets/images/icon-trending-up.svg" alt="">
+            <span class="stat__number">3.1&times;</span>
+          </span>
+          <span class="stat__body">
+            <span class="stat__label">Graduation lift</span>
+            <span class="stat__description">Partner schools outperform national averages 3x.</span>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </main>
 
-  <!-- Footer -->
-  © 2026 Bridge Collective
-  Registered charity 12345678
+  <footer class="site-footer">
+    <p>&copy; 2026 Bridge Collective</p>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/tagrgr">Tiago de Gregori</a>.
+    </p>
+    <p>Registered charity 12345678</p>
+  </footer>
 
-  <!-- Menu panel — hidden until the hamburger is activated -->
-  About
-  Our Work
-  Partners
-  Annual Report
-  Donate
+  <div class="overlay" hidden></div>
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <nav id="primary-menu" class="menu" aria-label="Main" hidden>
+    <ul>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Our Work</a></li>
+      <li><a href="#">Partners</a></li>
+      <li><a href="#">Annual Report</a></li>
+      <li><a href="#">Donate</a></li>
+    </ul>
+  </nav>
+
 </body>
 </html>

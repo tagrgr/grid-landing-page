@@ -1,0 +1,105 @@
+/* ---------- TABLET: THE STATS BECOME A 2x2 GRID UNDER THE HERO ---------- */
+
+@media (min-width: 40em) {
+    :root {
+        --font-preset1: 3.25rem;   /* 52px */
+    }
+
+    .site-header,
+    .hero,
+    .site-footer {
+        padding-inline: var(--spacing-500);
+    }
+
+    .hero {
+        padding-block: var(--spacing-700);
+    }
+
+    /* CAPPING THE MEASURE KEEPS THE HEADLINE ON TWO LINES, AS IN BOTH DESIGNS */
+    .hero h1,
+    .hero p {
+        max-width: 25rem;
+    }
+
+    .hero p {
+        margin-top: var(--spacing-500);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* THE FIRST ROW ALREADY HAS THE HERO'S BORDER ABOVE IT */
+    .stat:nth-child(2n) {
+        border-left: 1px solid var(--color-divider);
+    }
+
+    .stat:nth-child(-n + 2) {
+        border-top: 1px solid var(--color-divider);
+    }
+
+    .site-footer {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--spacing-400);
+        min-height: var(--header-height);
+        padding-block: var(--spacing-300);
+    }
+
+    .menu {
+        inset: var(--header-height) 0 auto auto;
+        width: var(--menu-width);
+        padding: var(--spacing-700);
+    }
+
+    .menu ul {
+        align-items: flex-end;
+        text-align: right;
+    }
+}
+
+/* ---------- DESKTOP: HERO ON THE LEFT, STAT GRID ON THE RIGHT ---------- */
+
+@media (min-width: 64em) {
+    :root {
+        --font-preset1: 3.75rem;   /* 60px */
+    }
+
+    .site-header,
+    .hero,
+    .site-footer {
+        padding-inline: var(--spacing-700);
+    }
+
+    .layout {
+        grid-template-columns: 45% 1fr;
+    }
+
+    .hero {
+        padding-block: var(--spacing-700);
+    }
+
+    .hero h1 {
+        line-height: 1.05;
+    }
+
+    .stat {
+        padding: var(--spacing-500);
+        border-left: 1px solid var(--color-divider);
+    }
+
+    /* THE HEADER'S BORDER ALREADY DRAWS THE LINE ABOVE THE TOP ROW */
+    .stat:nth-child(-n + 2) {
+        border-top: none;
+    }
+
+    /* ONLY THE BOTTOM ROW NEEDS A LINE ABOVE IT — THE HEADER SUPPLIES THE TOP ONE */
+    .stat:nth-child(n + 3) {
+        border-top: 1px solid var(--color-divider);
+    }
+
+    .menu {
+        bottom: 0;
+    }
+}
